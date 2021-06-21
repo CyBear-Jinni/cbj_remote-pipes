@@ -1,11 +1,11 @@
-import 'package:cbj_remote_pipes/domain/app_client/smart_client.dart';
+import 'package:cbj_remote_pipes/domain/hube_server/smart_server_u.dart';
 
 class SetupPipes {
   Future<void> main() async {
-    // SmartServerU smartServerU = SmartServerU();
+    SmartServerU smartServerU = SmartServerU();
+    smartServerU.startLocalServer();
 
-    SmartClient smartClient = SmartClient();
-    smartClient.createStreamWithHub('192.168.31.154');
-    // smartServerU.startLocalServer();
+    // SmartClient smartClient = SmartClient();
+    // smartClient.createStreamWithHub('192.168.31.154');
   }
 }

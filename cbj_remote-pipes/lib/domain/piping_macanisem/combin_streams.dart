@@ -1,25 +1,45 @@
-import 'dart:indexed_db';
+import 'dart:async';
 
-class Subject {
-  List<Observer> observers = <Observer>[];
-  int? state;
+import 'package:cbj_remote_pipes/infrastructure/smart_device_server_and_client/protoc_as_dart/smart_connection.pb.dart';
 
-  int? getState() {
-    return state;
+class PipItDown {
+  static StreamController hubStreamController = StreamController();
+  static StreamController<RequestsAndStatusFromHub> clientStreamController =
+      StreamController();
+
+  static Stream<RequestsAndStatusFromHub>? hubStream;
+  static Stream<ClientStatusRequests>? clientStream;
+
+  static void setHubStreamController(StreamController streamController) {
+    hubStreamController = streamController;
   }
 
-  void setState(int state) {
-    this.state = state;
-    notifyAllObservers();
+  static void setClientStreamController(
+      StreamController<RequestsAndStatusFromHub> streamController) {
+    clientStreamController = streamController;
   }
 
-  void attach(Observer observer) {
-    observers.add(observer);
+  void connectStreams() {
+    Stream streamMultipleListeners =
+        hubStreamController.stream.asBroadcastStream();
+
+    streamMultipleListeners.listen((event) {
+      // clientStreamController!.add('asd');
+    });
+  }
+}
+
+class NumberCreator {
+  NumberCreator() {
+    Timer.periodic(Duration(seconds: 1), (timer) {
+      _controller.sink.add(RequestsAndStatusFromHub());
+      _count++;
+    });
   }
 
-  void notifyAllObservers() {
-    for (Observer observer in observers) {
-      // observer.updateMethod();
-    }
-  }
+  var _count = 1;
+
+  final _controller = StreamController<RequestsAndStatusFromHub>();
+
+  Stream<RequestsAndStatusFromHub> get stream => _controller.stream;
 }

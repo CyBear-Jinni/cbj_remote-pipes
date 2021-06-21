@@ -1,6 +1,6 @@
 import 'dart:async';
 
-import 'package:cbj_remote_pipes/domain/app_client/smart_client.dart';
+import 'package:cbj_remote_pipes/domain/piping_macanisem/combin_streams.dart';
 import 'package:cbj_remote_pipes/infrastructure/smart_device_server_and_client/protoc_as_dart/smart_connection.pbgrpc.dart';
 import 'package:grpc/grpc.dart';
 
@@ -12,15 +12,17 @@ class SmartServerU extends SmartServerServiceBase {
   Stream<RequestsAndStatusFromHub> registerClient(
       ServiceCall call, Stream<ClientStatusRequests> request) async* {
     print('Test3');
-    SmartClient.createSmartServerClient('10.0.0.5');
+    PipItDown.clientStream = request;
+
+    yield* PipItDown.hubStream!;
   }
 
   @override
-  Stream<RequestsAndStatusFromClient> registerHub(
-      ServiceCall call, Stream<HubStatusAndRequests> request) async* {
-    print('Tes66t');
-
-    yield RequestsAndStatusFromClient();
+  Stream<ClientStatusRequests> registerHub(
+      ServiceCall call, Stream<RequestsAndStatusFromHub> request) async* {
+    print('Test3');
+    PipItDown.hubStream = request;
+    yield* PipItDown.clientStream!;
   }
 
   ///  Listening to port and deciding what to do with the response
