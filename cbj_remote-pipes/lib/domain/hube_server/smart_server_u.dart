@@ -12,17 +12,17 @@ class SmartServerU extends SmartServerServiceBase {
   Stream<RequestsAndStatusFromHub> registerClient(
       ServiceCall call, Stream<ClientStatusRequests> request) async* {
     print('Test3');
-    PipItDown.clientStream = request;
+    PipItDown.addClientStream(request);
 
-    yield* PipItDown.hubStream!;
+    yield* PipItDown.hubStreamController.stream;
   }
 
   @override
   Stream<ClientStatusRequests> registerHub(
       ServiceCall call, Stream<RequestsAndStatusFromHub> request) async* {
     print('Test3');
-    PipItDown.hubStream = request;
-    yield* PipItDown.clientStream!;
+    PipItDown.addHubStreamController(request);
+    yield* PipItDown.clientStreamController.stream;
   }
 
   ///  Listening to port and deciding what to do with the response
