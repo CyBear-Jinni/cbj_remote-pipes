@@ -14,7 +14,7 @@ class SmartServerU extends SmartServerServiceBase {
     print('RegisterClient have been called');
 
     PipItDown.addClientStream(request);
-    yield* PipItDown.hubStreamController.stream;
+    yield* PipItDown.hubStream;
   }
 
   @override
@@ -23,7 +23,7 @@ class SmartServerU extends SmartServerServiceBase {
     print('RegisterHub have been called');
 
     PipItDown.addHubStreamController(request);
-    yield* PipItDown.clientStreamController.stream;
+    yield* PipItDown.clientStream;
   }
 
   ///  Listening to port and deciding what to do with the response

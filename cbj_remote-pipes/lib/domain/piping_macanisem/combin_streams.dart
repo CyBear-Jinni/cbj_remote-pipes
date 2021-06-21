@@ -3,17 +3,23 @@ import 'dart:async';
 import 'package:cbj_remote_pipes/infrastructure/smart_device_server_and_client/protoc_as_dart/smart_connection.pb.dart';
 
 class PipItDown {
-  static StreamController<RequestsAndStatusFromHub> hubStreamController =
+  static final StreamController<RequestsAndStatusFromHub> _hubStreamController =
       StreamController<RequestsAndStatusFromHub>();
 
-  static StreamController<ClientStatusRequests> clientStreamController =
+  static final StreamController<ClientStatusRequests> _clientStreamController =
       StreamController<ClientStatusRequests>();
 
+  static Stream<RequestsAndStatusFromHub> get hubStream =>
+      _hubStreamController.stream;
+
+  static Stream<ClientStatusRequests> get clientStream =>
+      _clientStreamController.stream;
+
   static void addHubStreamController(Stream<RequestsAndStatusFromHub> stream) {
-    hubStreamController.addStream(stream);
+    _hubStreamController.addStream(stream);
   }
 
   static void addClientStream(Stream<ClientStatusRequests> stream) {
-    clientStreamController.addStream(stream);
+    _clientStreamController.addStream(stream);
   }
 }
