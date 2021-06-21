@@ -4,8 +4,5 @@ class SetupPipes {
   Future<void> main() async {
     SmartServerU smartServerU = SmartServerU();
     smartServerU.startLocalServer();
-
-    // SmartClient smartClient = SmartClient();
-    // smartClient.createStreamWithHub('192.168.31.154');
   }
 }

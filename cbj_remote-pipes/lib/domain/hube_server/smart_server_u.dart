@@ -11,16 +11,17 @@ class SmartServerU extends SmartServerServiceBase {
   @override
   Stream<RequestsAndStatusFromHub> registerClient(
       ServiceCall call, Stream<ClientStatusRequests> request) async* {
-    print('Test3');
-    PipItDown.addClientStream(request);
+    print('RegisterClient have been called');
 
+    PipItDown.addClientStream(request);
     yield* PipItDown.hubStreamController.stream;
   }
 
   @override
   Stream<ClientStatusRequests> registerHub(
       ServiceCall call, Stream<RequestsAndStatusFromHub> request) async* {
-    print('Test3');
+    print('RegisterHub have been called');
+
     PipItDown.addHubStreamController(request);
     yield* PipItDown.clientStreamController.stream;
   }
@@ -47,7 +48,7 @@ class SmartServerU extends SmartServerServiceBase {
 
   @override
   Future<CompInfo> getCompInfo(ServiceCall call, CommendStatus request) async {
-    return Future<CompInfo>.value(CompInfo());
+    return CompInfo();
   }
 
   //  Return the status of the specified device
