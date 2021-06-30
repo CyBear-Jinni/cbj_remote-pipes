@@ -14,15 +14,15 @@ import 'cbj_hub_server.pb.dart' as $0;
 export 'cbj_hub_server.pb.dart';
 
 class CbjHubClient extends $grpc.Client {
-  static final _$registerClient =
+  static final _$clientTransferDevices =
       $grpc.ClientMethod<$0.ClientStatusRequests, $0.RequestsAndStatusFromHub>(
-          '/CbjHub.CbjHub/RegisterClient',
+          '/CbjHub.CbjHub/ClientTransferDevices',
           ($0.ClientStatusRequests value) => value.writeToBuffer(),
           ($core.List<$core.int> value) =>
               $0.RequestsAndStatusFromHub.fromBuffer(value));
-  static final _$registerHub =
+  static final _$hubTransferDevices =
       $grpc.ClientMethod<$0.RequestsAndStatusFromHub, $0.ClientStatusRequests>(
-          '/CbjHub.CbjHub/RegisterHub',
+          '/CbjHub.CbjHub/HubTransferDevices',
           ($0.RequestsAndStatusFromHub value) => value.writeToBuffer(),
           ($core.List<$core.int> value) =>
               $0.ClientStatusRequests.fromBuffer(value));
@@ -32,16 +32,18 @@ class CbjHubClient extends $grpc.Client {
       $core.Iterable<$grpc.ClientInterceptor>? interceptors})
       : super(channel, options: options, interceptors: interceptors);
 
-  $grpc.ResponseStream<$0.RequestsAndStatusFromHub> registerClient(
+  $grpc.ResponseStream<$0.RequestsAndStatusFromHub> clientTransferDevices(
       $async.Stream<$0.ClientStatusRequests> request,
       {$grpc.CallOptions? options}) {
-    return $createStreamingCall(_$registerClient, request, options: options);
+    return $createStreamingCall(_$clientTransferDevices, request,
+        options: options);
   }
 
-  $grpc.ResponseStream<$0.ClientStatusRequests> registerHub(
+  $grpc.ResponseStream<$0.ClientStatusRequests> hubTransferDevices(
       $async.Stream<$0.RequestsAndStatusFromHub> request,
       {$grpc.CallOptions? options}) {
-    return $createStreamingCall(_$registerHub, request, options: options);
+    return $createStreamingCall(_$hubTransferDevices, request,
+        options: options);
   }
 }
 
@@ -51,8 +53,8 @@ abstract class CbjHubServiceBase extends $grpc.Service {
   CbjHubServiceBase() {
     $addMethod($grpc.ServiceMethod<$0.ClientStatusRequests,
             $0.RequestsAndStatusFromHub>(
-        'RegisterClient',
-        registerClient,
+        'ClientTransferDevices',
+        clientTransferDevices,
         true,
         true,
         ($core.List<$core.int> value) =>
@@ -60,8 +62,8 @@ abstract class CbjHubServiceBase extends $grpc.Service {
         ($0.RequestsAndStatusFromHub value) => value.writeToBuffer()));
     $addMethod($grpc.ServiceMethod<$0.RequestsAndStatusFromHub,
             $0.ClientStatusRequests>(
-        'RegisterHub',
-        registerHub,
+        'HubTransferDevices',
+        hubTransferDevices,
         true,
         true,
         ($core.List<$core.int> value) =>
@@ -69,8 +71,9 @@ abstract class CbjHubServiceBase extends $grpc.Service {
         ($0.ClientStatusRequests value) => value.writeToBuffer()));
   }
 
-  $async.Stream<$0.RequestsAndStatusFromHub> registerClient(
+  $async.Stream<$0.RequestsAndStatusFromHub> clientTransferDevices(
       $grpc.ServiceCall call, $async.Stream<$0.ClientStatusRequests> request);
-  $async.Stream<$0.ClientStatusRequests> registerHub($grpc.ServiceCall call,
+  $async.Stream<$0.ClientStatusRequests> hubTransferDevices(
+      $grpc.ServiceCall call,
       $async.Stream<$0.RequestsAndStatusFromHub> request);
 }
