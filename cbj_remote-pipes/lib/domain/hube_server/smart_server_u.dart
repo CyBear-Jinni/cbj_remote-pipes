@@ -1,7 +1,7 @@
 import 'dart:async';
 
 import 'package:cbj_remote_pipes/domain/piping_macanisem/combin_streams.dart';
-import 'package:cbj_remote_pipes/infrastructure/smart_device_server_and_client/protoc_as_dart/smart_connection.pbgrpc.dart';
+import 'package:cbj_remote_pipes/infrastructure/gen/cbj_hub_server/cbj_hub_server.pbgrpc.dart';
 import 'package:grpc/grpc.dart';
 
 /// This class get what to execute straight from the grpc request,
