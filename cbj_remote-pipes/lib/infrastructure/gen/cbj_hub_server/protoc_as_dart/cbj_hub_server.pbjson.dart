@@ -87,7 +87,7 @@ const SendingType$json = const {
   '2': const [
     const {'1': 'undefinedType', '2': 0},
     const {'1': 'stringType', '2': 1},
-    const {'1': 'partialJsonType', '2': 2},
+    const {'1': 'partialDeviceType', '2': 2},
     const {'1': 'deviceType', '2': 3},
     const {'1': 'mqttMassageType', '2': 4},
     const {'1': 'sceneType', '2': 5},
@@ -98,7 +98,7 @@ const SendingType$json = const {
 };
 
 /// Descriptor for `SendingType`. Decode as a `google.protobuf.EnumDescriptorProto`.
-final $typed_data.Uint8List sendingTypeDescriptor = $convert.base64Decode('CgtTZW5kaW5nVHlwZRIRCg11bmRlZmluZWRUeXBlEAASDgoKc3RyaW5nVHlwZRABEhMKD3BhcnRpYWxKc29uVHlwZRACEg4KCmRldmljZVR5cGUQAxITCg9tcXR0TWFzc2FnZVR5cGUQBBINCglzY2VuZVR5cGUQBRIQCgxzY2hlZHVsZVR5cGUQBhIPCgtyb3V0aW5lVHlwZRAHEhAKDGJpbmRpbmdzVHlwZRAI');
+final $typed_data.Uint8List sendingTypeDescriptor = $convert.base64Decode('CgtTZW5kaW5nVHlwZRIRCg11bmRlZmluZWRUeXBlEAASDgoKc3RyaW5nVHlwZRABEhUKEXBhcnRpYWxEZXZpY2VUeXBlEAISDgoKZGV2aWNlVHlwZRADEhMKD21xdHRNYXNzYWdlVHlwZRAEEg0KCXNjZW5lVHlwZRAFEhAKDHNjaGVkdWxlVHlwZRAGEg8KC3JvdXRpbmVUeXBlEAcSEAoMYmluZGluZ3NUeXBlEAg=');
 @$core.Deprecated('Use clientStatusRequestsDescriptor instead')
 const ClientStatusRequests$json = const {
   '1': 'ClientStatusRequests',

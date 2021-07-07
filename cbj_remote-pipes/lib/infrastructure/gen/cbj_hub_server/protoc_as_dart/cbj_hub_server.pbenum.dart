@@ -130,7 +130,7 @@ class DeviceStateGRPC extends $pb.ProtobufEnum {
 class SendingType extends $pb.ProtobufEnum {
   static const SendingType undefinedType = SendingType._(0, const $core.bool.fromEnvironment('protobuf.omit_enum_names') ? '' : 'undefinedType');
   static const SendingType stringType = SendingType._(1, const $core.bool.fromEnvironment('protobuf.omit_enum_names') ? '' : 'stringType');
-  static const SendingType partialJsonType = SendingType._(2, const $core.bool.fromEnvironment('protobuf.omit_enum_names') ? '' : 'partialJsonType');
+  static const SendingType partialDeviceType = SendingType._(2, const $core.bool.fromEnvironment('protobuf.omit_enum_names') ? '' : 'partialDeviceType');
   static const SendingType deviceType = SendingType._(3, const $core.bool.fromEnvironment('protobuf.omit_enum_names') ? '' : 'deviceType');
   static const SendingType mqttMassageType = SendingType._(4, const $core.bool.fromEnvironment('protobuf.omit_enum_names') ? '' : 'mqttMassageType');
   static const SendingType sceneType = SendingType._(5, const $core.bool.fromEnvironment('protobuf.omit_enum_names') ? '' : 'sceneType');
@@ -141,7 +141,7 @@ class SendingType extends $pb.ProtobufEnum {
   static const $core.List<SendingType> values = <SendingType> [
     undefinedType,
     stringType,
-    partialJsonType,
+    partialDeviceType,
     deviceType,
     mqttMassageType,
     sceneType,
