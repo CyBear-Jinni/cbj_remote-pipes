@@ -10,3 +10,28 @@ stage/
 *_arm64.txt
 *_i386.txt
 Dart_Packages.xml
+
+
+
+
+# Cache and build files
+.packages
+.pub/
+build/
+ios/.generated/
+packages
+pubspec.lock
+.flutter-plugins
+.gradle
+.dart_tool
+
+# IDE local settings
+.atom/
+.idea
+.vscode/
+
+# Test token
+token.json
+
+# MacOS garbage
+.DS_Store
