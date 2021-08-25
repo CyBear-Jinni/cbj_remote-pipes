@@ -1,6 +1,6 @@
 import 'dart:async';
-import 'package:cbj_remote_pipes/infrastructure/gen/cbj_hub_server/cbj_hub_server.pbgrpc.dart';
 
+import 'package:cbj_remote_pipes/infrastructure/gen/cbj_hub_server/protoc_as_dart/cbj_hub_server.pbgrpc.dart';
 
 class PipItDown {
   static final StreamController<RequestsAndStatusFromHub> _hubStreamController =
