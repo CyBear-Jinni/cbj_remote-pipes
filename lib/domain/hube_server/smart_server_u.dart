@@ -13,8 +13,9 @@ class SmartServerU extends CbjHubServiceBase {
       ServiceCall call, Stream<ClientStatusRequests> request) async* {
     print('RegisterClient have been called');
 
-    PipItDown.addClientStream(request);
-    yield* PipItDown.hubStream;
+    PipItDown.clientsGroup.add(request);
+
+    yield* PipItDown.hubsGroup.stream;
   }
 
   @override
@@ -22,8 +23,8 @@ class SmartServerU extends CbjHubServiceBase {
       ServiceCall call, Stream<RequestsAndStatusFromHub> request) async* {
     print('RegisterHub have been called');
 
-    PipItDown.addHubStreamController(request);
-    yield* PipItDown.clientStream;
+    PipItDown.hubsGroup.add(request);
+    yield* PipItDown.clientsGroup.stream;
   }
 
   ///  Listening to port and deciding what to do with the response
