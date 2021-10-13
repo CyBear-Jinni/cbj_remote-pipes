@@ -12,16 +12,24 @@ import 'package:protobuf/protobuf.dart' as $pb;
 class VendorsAndServices extends $pb.ProtobufEnum {
   static const VendorsAndServices vendorsAndServicesNotSupported = VendorsAndServices._(0, const $core.bool.fromEnvironment('protobuf.omit_enum_names') ? '' : 'vendorsAndServicesNotSupported');
   static const VendorsAndServices espHome = VendorsAndServices._(1, const $core.bool.fromEnvironment('protobuf.omit_enum_names') ? '' : 'espHome');
-  static const VendorsAndServices switcher = VendorsAndServices._(2, const $core.bool.fromEnvironment('protobuf.omit_enum_names') ? '' : 'switcher');
+  static const VendorsAndServices switcherSmartHome = VendorsAndServices._(2, const $core.bool.fromEnvironment('protobuf.omit_enum_names') ? '' : 'switcherSmartHome');
   static const VendorsAndServices tasmota = VendorsAndServices._(3, const $core.bool.fromEnvironment('protobuf.omit_enum_names') ? '' : 'tasmota');
   static const VendorsAndServices yeelight = VendorsAndServices._(4, const $core.bool.fromEnvironment('protobuf.omit_enum_names') ? '' : 'yeelight');
+  static const VendorsAndServices google = VendorsAndServices._(5, const $core.bool.fromEnvironment('protobuf.omit_enum_names') ? '' : 'google');
+  static const VendorsAndServices miHome = VendorsAndServices._(6, const $core.bool.fromEnvironment('protobuf.omit_enum_names') ? '' : 'miHome');
+  static const VendorsAndServices lifx = VendorsAndServices._(7, const $core.bool.fromEnvironment('protobuf.omit_enum_names') ? '' : 'lifx');
+  static const VendorsAndServices tuyaSmart = VendorsAndServices._(8, const $core.bool.fromEnvironment('protobuf.omit_enum_names') ? '' : 'tuyaSmart');
 
   static const $core.List<VendorsAndServices> values = <VendorsAndServices> [
     vendorsAndServicesNotSupported,
     espHome,
-    switcher,
+    switcherSmartHome,
     tasmota,
     yeelight,
+    google,
+    miHome,
+    lifx,
+    tuyaSmart,
   ];
 
   static final $core.Map<$core.int, VendorsAndServices> _byValue = $pb.ProtobufEnum.initByValue(values);
@@ -47,6 +55,7 @@ class DeviceTypes extends $pb.ProtobufEnum {
   static const DeviceTypes rgbLights = DeviceTypes._(14, const $core.bool.fromEnvironment('protobuf.omit_enum_names') ? '' : 'rgbLights');
   static const DeviceTypes rgbwLights = DeviceTypes._(15, const $core.bool.fromEnvironment('protobuf.omit_enum_names') ? '' : 'rgbwLights');
   static const DeviceTypes rgbcctLights = DeviceTypes._(16, const $core.bool.fromEnvironment('protobuf.omit_enum_names') ? '' : 'rgbcctLights');
+  static const DeviceTypes smartTV = DeviceTypes._(17, const $core.bool.fromEnvironment('protobuf.omit_enum_names') ? '' : 'smartTV');
 
   static const $core.List<DeviceTypes> values = <DeviceTypes> [
     typeNotSupported,
@@ -65,6 +74,7 @@ class DeviceTypes extends $pb.ProtobufEnum {
     rgbLights,
     rgbwLights,
     rgbcctLights,
+    smartTV,
   ];
 
   static final $core.Map<$core.int, DeviceTypes> _byValue = $pb.ProtobufEnum.initByValue(values);
@@ -170,6 +180,7 @@ class SendingType extends $pb.ProtobufEnum {
   static const SendingType scheduleType = SendingType._(6, const $core.bool.fromEnvironment('protobuf.omit_enum_names') ? '' : 'scheduleType');
   static const SendingType routineType = SendingType._(7, const $core.bool.fromEnvironment('protobuf.omit_enum_names') ? '' : 'routineType');
   static const SendingType bindingsType = SendingType._(8, const $core.bool.fromEnvironment('protobuf.omit_enum_names') ? '' : 'bindingsType');
+  static const SendingType vendorLoginType = SendingType._(9, const $core.bool.fromEnvironment('protobuf.omit_enum_names') ? '' : 'vendorLoginType');
 
   static const $core.List<SendingType> values = <SendingType> [
     undefinedType,
@@ -181,6 +192,7 @@ class SendingType extends $pb.ProtobufEnum {
     scheduleType,
     routineType,
     bindingsType,
+    vendorLoginType,
   ];
 
   static final $core.Map<$core.int, SendingType> _byValue = $pb.ProtobufEnum.initByValue(values);
