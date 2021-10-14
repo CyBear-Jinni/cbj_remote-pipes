@@ -12,6 +12,8 @@ dependencies:
   grpc: ^3.0.2
   # Collection of lint rules for Dart and Flutter projects
   lint: ^1.5.3
+  # Small, easy to use and extensible logger which prints beautiful logs.
+  logger: ^1.1.0
   # Runtime library for protocol buffers support.
   protobuf: ^2.0.0
   # Simple, fast generation of RFC4122 UUIDs.
