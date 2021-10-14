@@ -7,7 +7,6 @@ import 'package:grpc/grpc.dart';
 
 /// This class get what to execute straight from the grpc request,
 class SmartServerU extends CbjHubServiceBase {
-
   @override
   Stream<RequestsAndStatusFromHub> clientTransferDevices(
     ServiceCall call,
