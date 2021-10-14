@@ -2,16 +2,18 @@ import 'dart:async';
 
 import 'package:cbj_remote_pipes/domain/piping_macanisem/combin_streams.dart';
 import 'package:cbj_remote_pipes/infrastructure/gen/cbj_hub_server/protoc_as_dart/cbj_hub_server.pbgrpc.dart';
+import 'package:cbj_remote_pipes/utils.dart';
 import 'package:grpc/grpc.dart';
 
 /// This class get what to execute straight from the grpc request,
 class SmartServerU extends CbjHubServiceBase {
-  static const DeviceStateGRPC _deviceState = DeviceStateGRPC.waitingInComp;
 
   @override
   Stream<RequestsAndStatusFromHub> clientTransferDevices(
-      ServiceCall call, Stream<ClientStatusRequests> request) async* {
-    print('RegisterClient have been called');
+    ServiceCall call,
+    Stream<ClientStatusRequests> request,
+  ) async* {
+    logger.v('RegisterClient have been called');
 
     PipItDown.clientsGroup.add(request);
 
@@ -20,8 +22,10 @@ class SmartServerU extends CbjHubServiceBase {
 
   @override
   Stream<ClientStatusRequests> hubTransferDevices(
-      ServiceCall call, Stream<RequestsAndStatusFromHub> request) async* {
-    print('RegisterHub have been called');
+    ServiceCall call,
+    Stream<RequestsAndStatusFromHub> request,
+  ) async* {
+    logger.v('RegisterHub have been called');
 
     PipItDown.hubsGroup.add(request);
     yield* PipItDown.clientsGroup.stream;
@@ -29,7 +33,7 @@ class SmartServerU extends CbjHubServiceBase {
 
   ///  Listening to port and deciding what to do with the response
   void waitForConnection() {
-    print('Wait for connection');
+    logger.v('Wait for connection');
 
     final SmartServerU smartServer = SmartServerU();
     smartServer.startListen(); // Will go throw the model with the
@@ -44,6 +48,6 @@ class SmartServerU extends CbjHubServiceBase {
   Future startLocalServer() async {
     final server = Server([SmartServerU()]);
     await server.serve(port: 50051);
-    print('Server listening on port ${server.port}...');
+    logger.v('Server listening on port ${server.port}...');
   }
 }
