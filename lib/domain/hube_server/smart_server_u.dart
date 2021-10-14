@@ -12,11 +12,19 @@ class SmartServerU extends CbjHubServiceBase {
     ServiceCall call,
     Stream<ClientStatusRequests> request,
   ) async* {
-    logger.v('RegisterClient have been called');
-
-    PipItDown.clientsGroup.add(request);
-
-    yield* PipItDown.hubsGroup.stream;
+      logger.v('RegisterClient have been called');
+      try {
+      PipItDown.clientsGroup.add(request);
+      yield* PipItDown.hubsGroup.stream.handleError((error){
+        if(error is GrpcError && error.code == 1){
+          logger.v('Hub have disconnected');
+        } else {
+          logger.e('Hub stream error: $error');
+        }
+      });
+    } catch (e) {
+      logger.e('Register client error $e');
+    }
   }
 
   @override
@@ -26,8 +34,18 @@ class SmartServerU extends CbjHubServiceBase {
   ) async* {
     logger.v('RegisterHub have been called');
 
+    try {
     PipItDown.hubsGroup.add(request);
-    yield* PipItDown.clientsGroup.stream;
+    yield* PipItDown.clientsGroup.stream.handleError((error){
+      if(error is GrpcError && error.code == 1){
+        logger.v('Client have disconnected');
+      } else {
+        logger.e('Client stream error: $error');
+      }
+    });
+    } catch (e) {
+      logger.e('Register Hub error $e');
+    }
   }
 
   ///  Listening to port and deciding what to do with the response
@@ -46,9 +64,14 @@ class SmartServerU extends CbjHubServiceBase {
 
   /// Starting the local server that listen to hub and app calls
   // TODO change local server port based on env
-  Future startLocalServer() async {
-    final server = Server([SmartServerU()]);
-    await server.serve(port: 50051);
-    logger.v('Server listening on port ${server.port}...');
+  Future  startLocalServer() async {
+    try {
+      final server = Server([SmartServerU()]);
+      await server.serve(port: 50051);
+      logger.v('Server listening on port ${server.port}...');
+    }
+    catch (e) {
+      logger.e('Server error $e');
+    }
   }
 }
