@@ -319,6 +319,7 @@ class CbjHubIno extends $pb.GeneratedMessage {
     ..aOS(27, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'pubspecYamlVersion', protoName: 'pubspecYamlVersion')
     ..aOS(48, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'deviceName', protoName: 'deviceName')
     ..aOS(49, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'protoLastGenDate', protoName: 'protoLastGenDate')
+    ..aOS(51, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'pubspecYamlBuildNumber', protoName: 'pubspecYamlBuildNumber')
     ..hasRequiredFields = false
   ;
 
@@ -327,6 +328,7 @@ class CbjHubIno extends $pb.GeneratedMessage {
     $core.String? pubspecYamlVersion,
     $core.String? deviceName,
     $core.String? protoLastGenDate,
+    $core.String? pubspecYamlBuildNumber,
   }) {
     final _result = create();
     if (pubspecYamlVersion != null) {
@@ -337,6 +339,9 @@ class CbjHubIno extends $pb.GeneratedMessage {
     }
     if (protoLastGenDate != null) {
       _result.protoLastGenDate = protoLastGenDate;
+    }
+    if (pubspecYamlBuildNumber != null) {
+      _result.pubspecYamlBuildNumber = pubspecYamlBuildNumber;
     }
     return _result;
   }
@@ -387,6 +392,15 @@ class CbjHubIno extends $pb.GeneratedMessage {
   $core.bool hasProtoLastGenDate() => $_has(2);
   @$pb.TagNumber(49)
   void clearProtoLastGenDate() => clearField(49);
+
+  @$pb.TagNumber(51)
+  $core.String get pubspecYamlBuildNumber => $_getSZ(3);
+  @$pb.TagNumber(51)
+  set pubspecYamlBuildNumber($core.String v) { $_setString(3, v); }
+  @$pb.TagNumber(51)
+  $core.bool hasPubspecYamlBuildNumber() => $_has(3);
+  @$pb.TagNumber(51)
+  void clearPubspecYamlBuildNumber() => clearField(51);
 }
 
 class CompHubSpecs extends $pb.GeneratedMessage {
@@ -396,6 +410,7 @@ class CompHubSpecs extends $pb.GeneratedMessage {
     ..aOS(24, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'compOs', protoName: 'compOs')
     ..aOS(25, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'compModel', protoName: 'compModel')
     ..aOS(26, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'compType', protoName: 'compType')
+    ..aOS(50, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'compIp', protoName: 'compIp')
     ..hasRequiredFields = false
   ;
 
@@ -406,6 +421,7 @@ class CompHubSpecs extends $pb.GeneratedMessage {
     $core.String? compOs,
     $core.String? compModel,
     $core.String? compType,
+    $core.String? compIp,
   }) {
     final _result = create();
     if (compId != null) {
@@ -422,6 +438,9 @@ class CompHubSpecs extends $pb.GeneratedMessage {
     }
     if (compType != null) {
       _result.compType = compType;
+    }
+    if (compIp != null) {
+      _result.compIp = compIp;
     }
     return _result;
   }
@@ -490,6 +509,15 @@ class CompHubSpecs extends $pb.GeneratedMessage {
   $core.bool hasCompType() => $_has(4);
   @$pb.TagNumber(26)
   void clearCompType() => clearField(26);
+
+  @$pb.TagNumber(50)
+  $core.String get compIp => $_getSZ(5);
+  @$pb.TagNumber(50)
+  set compIp($core.String v) { $_setString(5, v); }
+  @$pb.TagNumber(50)
+  $core.bool hasCompIp() => $_has(5);
+  @$pb.TagNumber(50)
+  void clearCompIp() => clearField(50);
 }
 
 class MicrocontrollerSpecs extends $pb.GeneratedMessage {

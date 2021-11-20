@@ -191,12 +191,13 @@ const CbjHubIno$json = const {
   '2': const [
     const {'1': 'deviceName', '3': 48, '4': 1, '5': 9, '10': 'deviceName'},
     const {'1': 'pubspecYamlVersion', '3': 27, '4': 1, '5': 9, '10': 'pubspecYamlVersion'},
+    const {'1': 'pubspecYamlBuildNumber', '3': 51, '4': 1, '5': 9, '10': 'pubspecYamlBuildNumber'},
     const {'1': 'protoLastGenDate', '3': 49, '4': 1, '5': 9, '10': 'protoLastGenDate'},
   ],
 };
 
 /// Descriptor for `CbjHubIno`. Decode as a `google.protobuf.DescriptorProto`.
-final $typed_data.Uint8List cbjHubInoDescriptor = $convert.base64Decode('CglDYmpIdWJJbm8SHgoKZGV2aWNlTmFtZRgwIAEoCVIKZGV2aWNlTmFtZRIuChJwdWJzcGVjWWFtbFZlcnNpb24YGyABKAlSEnB1YnNwZWNZYW1sVmVyc2lvbhIqChBwcm90b0xhc3RHZW5EYXRlGDEgASgJUhBwcm90b0xhc3RHZW5EYXRl');
+final $typed_data.Uint8List cbjHubInoDescriptor = $convert.base64Decode('CglDYmpIdWJJbm8SHgoKZGV2aWNlTmFtZRgwIAEoCVIKZGV2aWNlTmFtZRIuChJwdWJzcGVjWWFtbFZlcnNpb24YGyABKAlSEnB1YnNwZWNZYW1sVmVyc2lvbhI2ChZwdWJzcGVjWWFtbEJ1aWxkTnVtYmVyGDMgASgJUhZwdWJzcGVjWWFtbEJ1aWxkTnVtYmVyEioKEHByb3RvTGFzdEdlbkRhdGUYMSABKAlSEHByb3RvTGFzdEdlbkRhdGU=');
 @$core.Deprecated('Use compHubSpecsDescriptor instead')
 const CompHubSpecs$json = const {
   '1': 'CompHubSpecs',
@@ -206,11 +207,12 @@ const CompHubSpecs$json = const {
     const {'1': 'compOs', '3': 24, '4': 1, '5': 9, '10': 'compOs'},
     const {'1': 'compModel', '3': 25, '4': 1, '5': 9, '10': 'compModel'},
     const {'1': 'compType', '3': 26, '4': 1, '5': 9, '10': 'compType'},
+    const {'1': 'compIp', '3': 50, '4': 1, '5': 9, '10': 'compIp'},
   ],
 };
 
 /// Descriptor for `CompHubSpecs`. Decode as a `google.protobuf.DescriptorProto`.
-final $typed_data.Uint8List compHubSpecsDescriptor = $convert.base64Decode('CgxDb21wSHViU3BlY3MSFgoGY29tcElkGBYgASgJUgZjb21wSWQSGgoIY29tcFV1aWQYFyABKAlSCGNvbXBVdWlkEhYKBmNvbXBPcxgYIAEoCVIGY29tcE9zEhwKCWNvbXBNb2RlbBgZIAEoCVIJY29tcE1vZGVsEhoKCGNvbXBUeXBlGBogASgJUghjb21wVHlwZQ==');
+final $typed_data.Uint8List compHubSpecsDescriptor = $convert.base64Decode('CgxDb21wSHViU3BlY3MSFgoGY29tcElkGBYgASgJUgZjb21wSWQSGgoIY29tcFV1aWQYFyABKAlSCGNvbXBVdWlkEhYKBmNvbXBPcxgYIAEoCVIGY29tcE9zEhwKCWNvbXBNb2RlbBgZIAEoCVIJY29tcE1vZGVsEhoKCGNvbXBUeXBlGBogASgJUghjb21wVHlwZRIWCgZjb21wSXAYMiABKAlSBmNvbXBJcA==');
 @$core.Deprecated('Use microcontrollerSpecsDescriptor instead')
 const MicrocontrollerSpecs$json = const {
   '1': 'MicrocontrollerSpecs',
