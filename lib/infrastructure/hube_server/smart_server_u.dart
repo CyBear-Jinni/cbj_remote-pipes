@@ -84,8 +84,9 @@ class SmartServerU extends CbjHubServiceBase {
     logger.i('Hub info got requested');
 
     final CbjHubIno cbjHubIno = CbjHubIno(
-      deviceName: 'cbj Hub',
+      deviceName: 'cbj Remote Pipes',
       protoLastGenDate: hubServerProtocGenDate,
+      dartSdkVersion: Platform.version,
     );
 
     final CompHubSpecs compHubSpecs = CompHubSpecs(
