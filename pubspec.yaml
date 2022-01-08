@@ -4,7 +4,7 @@ version: 1.0.0
 homepage: https://cybearjinni.com
 
 environment:
-  sdk: ^2.14.3
+  sdk: ^2.15.1
 
 dependencies:
   async: ^2.8.2
@@ -13,10 +13,10 @@ dependencies:
   # Small, easy to use and extensible logger which prints beautiful logs.
   logger: ^1.1.0
   # Runtime library for protocol buffers support.
-  protobuf: ^2.0.0
+  protobuf: ^2.0.1
   # Simple, fast generation of RFC4122 UUIDs.
   uuid: ^3.0.5
 
 dev_dependencies:
   # Collection of lint rules for Dart and Flutter projects
-  lint: ^1.7.2
+  lint: ^1.8.1
