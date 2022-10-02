@@ -4,7 +4,7 @@ version: 1.0.0
 homepage: https://cybearjinni.com
 
 environment:
-  sdk: ^2.15.1
+  sdk: ^2.18.0
 
 dependencies:
   async: ^2.8.2
