@@ -1,10 +1,10 @@
 name: cbj_remote_pipes
 description: A simple command-line application.
-version: 1.0.0
+version: 1.0.1
 homepage: https://cybearjinni.com
 
 environment:
-  sdk: ^2.18.0
+  sdk: ^2.18.2
 
 dependencies:
   # Utility classes to work with asynchronous computations.
