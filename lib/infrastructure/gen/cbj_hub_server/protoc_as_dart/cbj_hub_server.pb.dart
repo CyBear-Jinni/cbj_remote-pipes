@@ -3,7 +3,7 @@
 //  source: cbj_hub_server.proto
 //
 // @dart = 2.12
-// ignore_for_file: annotate_overrides,camel_case_types,unnecessary_const,non_constant_identifier_names,library_prefixes,unused_import,unused_shown_name,return_of_invalid_type,unnecessary_this,prefer_final_fields
+// ignore_for_file: annotate_overrides,camel_case_types,constant_identifier_names,directives_ordering,library_prefixes,non_constant_identifier_names,prefer_final_fields,return_of_invalid_type,unnecessary_const,unnecessary_import,unnecessary_this,unused_import,unused_shown_name
 
 import 'dart:core' as $core;
 
@@ -1169,7 +1169,7 @@ class FirebaseAccountInformation extends $pb.GeneratedMessage {
 
 class DeviceTypesActions extends $pb.GeneratedMessage {
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'DeviceTypesActions', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'CbjHub'), createEmptyInstance: create)
-    ..e<DeviceTypes>(35, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'deviceType', $pb.PbFieldType.OE, protoName: 'deviceType', defaultOrMaker: DeviceTypes.typeNotSupported, valueOf: DeviceTypes.valueOf, enumValues: DeviceTypes.values)
+    ..e<DeviceTypes>(35, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'deviceType', $pb.PbFieldType.OE, protoName: 'deviceType', defaultOrMaker: DeviceTypes.smartTypeNotSupported, valueOf: DeviceTypes.valueOf, enumValues: DeviceTypes.values)
     ..e<DeviceActions>(36, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'deviceAction', $pb.PbFieldType.OE, protoName: 'deviceAction', defaultOrMaker: DeviceActions.actionNotSupported, valueOf: DeviceActions.valueOf, enumValues: DeviceActions.values)
     ..e<DeviceStateGRPC>(37, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'deviceStateGRPC', $pb.PbFieldType.OE, protoName: 'deviceStateGRPC', defaultOrMaker: DeviceStateGRPC.stateNotSupported, valueOf: DeviceStateGRPC.valueOf, enumValues: DeviceStateGRPC.values)
     ..e<VendorsAndServices>(46, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'vendorsAndServices', $pb.PbFieldType.OE, protoName: 'vendorsAndServices', defaultOrMaker: VendorsAndServices.vendorsAndServicesNotSupported, valueOf: VendorsAndServices.valueOf, enumValues: VendorsAndServices.values)
