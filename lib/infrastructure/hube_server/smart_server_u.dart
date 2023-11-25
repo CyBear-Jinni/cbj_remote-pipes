@@ -10,7 +10,7 @@ import 'package:grpc/grpc.dart';
 /// This class get what to execute straight from the grpc request,
 class SmartServerU extends CbjHubServiceBase {
   @override
-  Stream<RequestsAndStatusFromHub> clientTransferDevices(
+  Stream<RequestsAndStatusFromHub> clientTransferEntities(
     ServiceCall call,
     Stream<ClientStatusRequests> request,
   ) async* {
@@ -30,7 +30,7 @@ class SmartServerU extends CbjHubServiceBase {
   }
 
   @override
-  Stream<ClientStatusRequests> hubTransferDevices(
+  Stream<ClientStatusRequests> hubTransferEntities(
     ServiceCall call,
     Stream<RequestsAndStatusFromHub> request,
   ) async* {
