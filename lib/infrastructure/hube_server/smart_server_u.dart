@@ -84,7 +84,7 @@ class SmartServerU extends CbjHubServiceBase {
     logger.i('Hub info got requested');
 
     final CbjHubIno cbjHubIno = CbjHubIno(
-      deviceName: 'cbj Remote Pipes',
+      entityName: 'cbj Remote Pipes',
       protoLastGenDate: hubServerProtocGenDate,
       dartSdkVersion: Platform.version,
     );
@@ -98,5 +98,19 @@ class SmartServerU extends CbjHubServiceBase {
       compSpecs: compHubSpecs,
     );
     return compHubInfo;
+  }
+
+  @override
+  Stream<RequestsAndStatusFromHub> clientTransferEntities(
+      ServiceCall call, Stream<ClientStatusRequests> request) {
+    // TODO: implement clientTransferEntities
+    throw UnimplementedError();
+  }
+
+  @override
+  Stream<ClientStatusRequests> hubTransferEntities(
+      ServiceCall call, Stream<RequestsAndStatusFromHub> request) {
+    // TODO: implement hubTransferEntities
+    throw UnimplementedError();
   }
 }
