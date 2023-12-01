@@ -99,4 +99,18 @@ class SmartServerU extends CbjHubServiceBase {
     );
     return compHubInfo;
   }
+
+  @override
+  Stream<RequestsAndStatusFromHub> clientTransferEntities(
+      ServiceCall call, Stream<ClientStatusRequests> request) {
+    // TODO: implement clientTransferEntities
+    throw UnimplementedError();
+  }
+
+  @override
+  Stream<ClientStatusRequests> hubTransferEntities(
+      ServiceCall call, Stream<RequestsAndStatusFromHub> request) {
+    // TODO: implement hubTransferEntities
+    throw UnimplementedError();
+  }
 }
