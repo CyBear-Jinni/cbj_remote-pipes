@@ -13,6 +13,11 @@ Dart_Packages.xml
 
 
 
+# IntelliJ related
+*.iml
+*.ipr
+*.iws
+.idea/
 
 # Cache and build files
 .packages
@@ -35,3 +40,6 @@ token.json
 
 # MacOS garbage
 .DS_Store
+
+# melos
+pubspec_overrides.yaml
