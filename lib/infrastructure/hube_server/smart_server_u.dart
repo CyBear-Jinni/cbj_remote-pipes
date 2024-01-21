@@ -9,6 +9,18 @@ import 'package:grpc/grpc.dart';
 
 /// This class get what to execute straight from the grpc request,
 class SmartServerU extends CbjHubServiceBase {
+  /// Starting the local server that listen to hub and app calls
+  // TODO change local server port based on env
+  Future startLocalServer() async {
+    try {
+      final server = Server.create(services: [SmartServerU()]);
+      await server.serve(port: 50051);
+      logger.t('Server listening on port ${server.port}...');
+    } catch (e) {
+      logger.e('Server error\n$e');
+    }
+  }
+
   @override
   Stream<RequestsAndStatusFromHub> clientTransferEntities(
     ServiceCall call,
@@ -34,7 +46,7 @@ class SmartServerU extends CbjHubServiceBase {
     ServiceCall call,
     Stream<RequestsAndStatusFromHub> request,
   ) async* {
-    logger.t('RegisterHub have been called');
+    logger.i('RegisterHub have been called');
 
     try {
       PipItDown.hubsGroup.add(request);
@@ -47,32 +59,6 @@ class SmartServerU extends CbjHubServiceBase {
       });
     } catch (e) {
       logger.e('Register Hub error\n$e');
-    }
-  }
-
-  ///  Listening to port and deciding what to do with the response
-  void waitForConnection() {
-    logger.t('Wait for connection');
-
-    final SmartServerU smartServer = SmartServerU();
-    smartServer.startListen(); // Will go throw the model with the
-    // grpc logic and converter to objects
-  }
-
-  ///  Listening in the background to incoming connections
-  Future startListen() async {
-    await startLocalServer();
-  }
-
-  /// Starting the local server that listen to hub and app calls
-  // TODO change local server port based on env
-  Future startLocalServer() async {
-    try {
-      final server = Server.create(services: [SmartServerU()]);
-      await server.serve(port: 50051);
-      logger.t('Server listening on port ${server.port}...');
-    } catch (e) {
-      logger.e('Server error\n$e');
     }
   }
 
