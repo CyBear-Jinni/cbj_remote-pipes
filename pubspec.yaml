@@ -15,8 +15,6 @@ dependencies:
   logger: ^2.0.2+1
   # Runtime library for protocol buffers support.
   protobuf: ^3.1.0
-  # Simple, fast generation of RFC4122 UUIDs.
-  uuid: ^4.2.1
 
 dev_dependencies:
   # Collection of lint rules for Dart and Flutter projects
